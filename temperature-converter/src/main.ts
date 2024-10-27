@@ -1,4 +1,5 @@
 import { formulas } from "./formulas"
+const grados = document.querySelector('#grados') as HTMLHeadingElement
 const error = document.querySelector('#error') as HTMLParagraphElement
 const form = document.querySelector('#converterForm') as HTMLFormElement
 
@@ -23,7 +24,9 @@ const handleSubmit = (e : Event) => {
     typeof data.fromUnit !== 'string' ||
     typeof data.toUnit !== 'string'
   ) {
-    error?.classList.remove('hidden')
+    error.classList.remove('hidden')
+    grados.classList.add('hidden')
+    grados.innerHTML = ''
     return;
   }
   document.querySelector('#error')?.classList.add('hidden')
@@ -31,10 +34,12 @@ const handleSubmit = (e : Event) => {
   try {
     const result = formulas[data.fromUnit][data.toUnit](data.temperature)
     error?.classList.add('hidden')
-    const grados = document.querySelector('#grados') as HTMLHeadingElement
+    grados.classList.remove('hidden')
     grados.innerHTML = `${result} ${data.toUnit}`
   } catch (err) {
     error?.classList.remove('hidden')
+    grados.classList.add('hidden')
+    grados.innerHTML = ''
     error.innerHTML = 'Ah ocurrido un error, revisa los datos ingresados'
   }
 }

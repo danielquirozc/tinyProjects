@@ -1,41 +1,50 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temperature Converter</title>
-  </head>
-  <body class="min-h-screen flex font-inter justify-center items-center">
-    <div class="w-1/2 grid place-content-center p-4 h-44 rounded-md border-2 border-black">
-      <h1 class="font-bold text-xl">Temperature Converter</h1>
-      <p class="mb-2">Enter the temperature, select units and submit</p>
-      <form class="flex gap-4 flex-start" id="converterForm">
-        <input required class="w-44 px-2 rounded-md border-2 border-black" type="number" name="temperature" value="0.00">
-        <select name="fromUnit" class="rounded-md px-2 border-2 border-black" id="fromUnit">
-          <option disabled selected>From unit</option>
-          <option value="celsius">Celsius</option>
-          <option value="fahrenheit">Fahrenheit</option>
-          <option value="kelvin">Kelvin</option>
-        </select>
-        <select name="toUnit" class="rounded-md px-2 border-2 border-black" id="toUnit">
-          <option disabled selected>To unit</option>
-          <option value="celsius">Celsius</option>
-          <option value="fahrenheit">Fahrenheit</option>
-          <option value="kelvin">Kelvin</option>
-        </select>
-        <button type="submit" class="bg-black px-3 py-2 text-white rounded-md">Convert</button>
-      </form>
-      <p class="text-red-500 my-2 mx-2 hidden" id="error">Elija una unidad de conversión</p>
-      <div class="flex flex-start">
-        <h2 class="my-2 capitalize px-2 py-1 rounded-lg border-2 border-black" id="grados"></h2>
-      </div>
+
+<head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+</head>
+
+<body class="min-h-screen bg-slate-100 flex font-inter justify-center items-center">
+  <div class="w-1/2 flex flex-col justify-center items-center p-4 h-44 rounded-md border-2 border-black">
+    <h1 class="font-bold text-xl">Temperature Converter</h1>
+    <p class="mb-2">Enter the temperature, select units and submit</p>
+    <form class="flex gap-4 flex-start" id="converterForm">
+      <input required class="w-44 px-2 rounded-md border-2 border-black" type="number" name="temperature" value="0.00">
+      <select name="fromUnit" class="rounded-md px-2 border-2 border-black" id="fromUnit">
+        <option disabled selected>From unit</option>
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <select name="toUnit" class="rounded-md px-2 border-2 border-black" id="toUnit">
+        <option disabled selected>To unit</option>
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <button type="submit" class="bg-black px-3 py-2 text-white rounded-md">
+        Convert
+      </button>
+    </form>
+    <p class="text-red-500 my-2 mx-2 hidden" id="error">
+      Elija una unidad de conversión
+    </p>
+    <div class="flex flex-start">
+      <h2 class="my-2 hidden capitalize px-2 py-1 rounded-lg border-2 border-black" id="grados"></h2>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
