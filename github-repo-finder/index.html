@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Repository Finder</title>
+</head>
+
+<body class="min-h-screen font-quicksand grid place-content-center justify-items-center">
+  <main class="max-w-72">
+    <h1 class="flex items-center gap-2 text-xl font-medium">
+      <img class="w-8" src="/github.svg">
+      GitHub Repository Finder
+    </h1>
+    <div class="relative w-72 group">
+      <button id="btn" class="border-2 font-semibold w-full my-2 rounded-md py-1 border-black">
+        <span id="dropdownLabel">Select a language</span>
+        <img class="w-6 group-hover:rotate-180 duration-300 inline" src="/chevron-down.svg">
+      </button>
+      <form
+        class="bg-white max-h-0 hidden group-hover:block overflow-y-scroll border-2 w-full rounded-md border-black duration-300 px-2 py-1 group-hover:max-h-52 absolute list-none overflow-hidden"
+        id="languages">
+      </form>
+    </div>
+      <div class="bg-slate-200/50 min-h-44 flex-start justify-center items-center flex flex-col overflow-hidden flex-wrap p-2 rounded-md" id="repo-container">
+        <span class="font-medium" id="statusInfo">
+          Please select a lenguage
+        </span>
+      </div>
+      <button id="refresh" class="border-2 hidden font-medium w-full my-2 rounded-lg py-2 text-white bg-black">Refresh</button>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
